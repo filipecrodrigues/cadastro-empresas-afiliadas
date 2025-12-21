@@ -1,0 +1,73 @@
+############################################
+# Java / Maven / Gradle
+############################################
+target/
+bin/
+build/
+out/
+
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+############################################
+# Spring Boot
+############################################
+.springBeans
+.spring-boot-devtools.properties
+
+############################################
+# H2 Database
+############################################
+*.mv.db
+*.trace.db
+*.h2.db
+data/
+db/
+
+############################################
+# VS Code
+############################################
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+############################################
+# IntelliJ / Eclipse (caso use futuramente)
+############################################
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+############################################
+# Sistema Operacional
+############################################
+.DS_Store
+Thumbs.db
+
+############################################
+# Logs
+############################################
+logs/
+*.log
+
+############################################
+# Arquivos temporários
+############################################
+*.tmp
+*.swp
+*.bak
+
+############################################
+# Configurações sensíveis
+############################################
+application-local.yml
+application-local.properties
+application-dev.yml
+application-dev.properties
