@@ -1,12 +1,22 @@
 package com.filipecrodrigues.cadastro.controllers;
 
+import java.net.URI;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.filipecrodrigues.cadastro.entities.Empresa;
 import com.filipecrodrigues.cadastro.services.EmpresaService;
-import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import jakarta.validation.Valid;
 
 // Controller REST
 @RestController
@@ -26,14 +36,13 @@ public class EmpresaController {
     // ===============================
     // CREATE
     // ===============================
-    @PostMapping
-    public ResponseEntity<Empresa> cadastrar(
-            // @Valid ativa as validações da entidade
-            @RequestBody @Valid Empresa empresa) {
+@PostMapping
+public ResponseEntity<Empresa> cadastrar(@RequestBody @Valid Empresa empresa) {
+    Empresa empresaSalva = empresaService.cadastrar(empresa);
+    URI uri = URI.create("/api/empresas/" + empresaSalva.getId());
+    return ResponseEntity.created(uri).body(empresaSalva);
+}
 
-        Empresa empresaSalva = empresaService.cadastrar(empresa);
-        return ResponseEntity.ok(empresaSalva);
-    }
 
     // ===============================
     // READ - Listar todas
