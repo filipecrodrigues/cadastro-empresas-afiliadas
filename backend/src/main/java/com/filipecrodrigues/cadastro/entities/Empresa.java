@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 @Entity
 
 // Define explicitamente o nome da tabela no banco
-@Table(name = "empresa")
+@Table(name = "empresas")
 public class Empresa {
 
     // Define a chave primária da tabela
