@@ -62,20 +62,6 @@ export class CadastroComponent implements OnInit {
     }
   }
 
-  // Atualizar empresa existente
-  atualizar(): void {
-    if (!this.empresaEditar) return;
-    if (this.form.valid) {
-      const empresa: Empresa = this.form.value;
-      this.empresaService.atualizar(this.empresaEditar.id!, empresa).subscribe({
-        next: () => console.log('Empresa atualizada com sucesso!'),
-        error: (err) => console.error('Erro ao atualizar empresa', err)
-      });
-    } else {
-      this.form.markAllAsTouched();
-    }
-  }
-
   // Cancelar e limpar formulário
   cancelar(): void {
     this.form.reset();
