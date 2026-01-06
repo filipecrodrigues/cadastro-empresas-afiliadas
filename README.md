@@ -1,14 +1,14 @@
 # Cadastro de Empresas Afiliadas
 
-Projeto **full stack** desenvolvido com **Java (Spring Boot)** no
-backend e **Angular** no frontend, com o objetivo de **centralizar os
-dados das empresas controladas por uma holding**, facilitando o
+Projeto **full stack** desenvolvido com **Java 21 (Spring Boot)** no
+backend e **Angular 19** no frontend, com o objetivo de **centralizar os
+dados das empresas parceiras**, facilitando o
 gerenciamento e a organização das informações.
 
 ##  Objetivo do Projeto
 
 Criar uma aplicação que permita: - Centralizar o cadastro de empresas
-afiliadas - Organizar informações empresariais em um único sistema -
+parceiras - Organizar informações empresariais em um único sistema -
 Facilitar o controle e a manutenção dos dados - Aplicar boas práticas de
 desenvolvimento backend e frontend
 
@@ -29,15 +29,15 @@ tecnologias amplamente utilizadas no mercado.
 
 ### 🔹 Frontend
 
--   Angular
+-   Angular 19
 -   TypeScript
 -   HTML5
 -   CSS3
+-   Angular Material – biblioteca de componentes UI baseada em Material Design
 
 ### 🔹 Outras Ferramentas
 
 -   Git e GitHub
--   Arquitetura em camadas
 
 ## Arquitetura do Backend
 
@@ -64,7 +64,7 @@ Swagger: http://localhost:8080/swagger-ui.html
 
 ##  Status do Projeto
 
-Em desenvolvimento (preparando para iniciar o front-end com o angular)
+Em desenvolvimento (Desenvolvendo o Front-end que irá consumir a api)
 
 ##  Autor
 
