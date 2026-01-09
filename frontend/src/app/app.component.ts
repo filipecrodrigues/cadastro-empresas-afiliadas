@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router'; //Routerlink diretiva para navegaçao entre páginas
-import {MatToolbarModule} from '@angular/material/toolbar'; //importação toolbar angular material
-import { MatIconModule, MatIcon } from '@angular/material/icon'//para utilização de icones
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+
+import { EmpresaDialogService } from './features/empresas/services/empresa-dialog.service';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIconModule],
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    MatToolbarModule,
+    MatIconModule
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+
+  constructor(private dialogService: EmpresaDialogService) {}
+
+  abrirCadastro(): void {
+    this.dialogService.abrirCadastro();
+  }
 }

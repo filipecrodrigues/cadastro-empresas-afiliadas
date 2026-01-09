@@ -7,15 +7,8 @@
   <span class="spacer"></span>
 
   <nav class="toolbar-nav">
-    <a routerLink="/cadastro" routerLinkActive="active">
-     
-      <span>Cadastrar</span>
-    </a>
-
-    <a routerLink="consulta" routerLinkActive="active">
-      
-      <span>Pesquisa</span>
-    </a>
+    <!-- botão Cadastrar (ainda sem modal) -->
+    <button mat-button (click)="abrirCadastro()">Cadastrar</button>
   </nav>
 </mat-toolbar>
 
@@ -25,6 +18,4 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  Copyright © Filipe Cândido - 2025
-</footer>
+<footer class="footer">Copyright © Filipe Cândido - 2025</footer>
