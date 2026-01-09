@@ -6,6 +6,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inject } from '@angular/core';
+
 import { Empresa } from '../../models/empresa.model';
 import { EmpresaService } from '../../services/empresa.service';
 
@@ -38,12 +41,14 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private empresaService: EmpresaService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialogRef: MatDialogRef<CadastroComponent>,
+    @Inject(MAT_DIALOG_DATA) private data?: { empresa?: Empresa }
   ) {}
 
   ngOnInit(): void {
-    if (this.empresaEditar) {
-      this.empresa = { ...this.empresaEditar };
+    if (this.data?.empresa) {
+      this.empresa = { ...this.data.empresa };
     }
   }
 
@@ -57,7 +62,7 @@ export class CadastroComponent implements OnInit {
             verticalPosition: 'top',
           });
 
-          this.cancelar();
+          this.dialogRef.close(true); // sucesso
         },
         error: () => {
           this.snackBar.open(
@@ -75,13 +80,6 @@ export class CadastroComponent implements OnInit {
   }
 
   cancelar(): void {
-    this.empresa = {
-      cnpj: '',
-      razaoSocial: '',
-      nomeFantasia: '',
-      atividadeEconomica: '',
-      endereco: '',
-      telefone: '',
-    };
+    this.dialogRef.close(false);
   }
 }
